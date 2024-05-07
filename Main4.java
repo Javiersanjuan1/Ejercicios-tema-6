@@ -75,7 +75,7 @@ public class Main5 {
             nombreCliente = scanner.nextLine();
             System.out.print("Precio: ");
             precio = scanner.nextDouble();
-            scanner.nextLine(); // consume newline not consumed by nextDouble()
+            scanner.nextLine();
             System.out.print("Fecha (d/m/yyyy): ");
             fecha = scanner.nextLine();
             ventas.add(new Venta(nombreProducto, nombreCliente, precio, LocalDate.parse(fecha, formatter)));

@@ -22,7 +22,7 @@ public class GestorCadenas {
                 case 1:
                     System.out.print("Introduzca la posición donde desea agregar la cadena: ");
                     int posicion = scanner.nextInt();
-                    scanner.nextLine(); // Consumir la nueva línea después de leer el entero
+                    scanner.nextLine();
                     System.out.print("Introduzca la cadena a agregar: ");
                     String cadena = scanner.nextLine();
                     agregarEnPosicion(lista, posicion, cadena);

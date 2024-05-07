@@ -22,19 +22,16 @@ public class RegistroVentas {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         List<Venta> ventas = new ArrayList<>();
-
-        // Leer registros de venta de la entrada estándar
         System.out.println("Ingrese los registros de ventas (producto cliente precio fecha):");
         while (scanner.hasNextLine()) {
             String[] datosVenta = scanner.nextLine().split(" ");
             if (datosVenta.length != 4) {
-                break; // Terminar la entrada si no se proporcionan los 4 datos necesarios
+                break;
             }
 
             String producto = datosVenta[0];
             String cliente = datosVenta[1];
             double precio = Double.parseDouble(datosVenta[2]);
-            // Suponiendo que la fecha esté en formato dd/mm/yyyy
             String[] fechaSplit = datosVenta[3].split("/");
             int dia = Integer.parseInt(fechaSplit[0]);
             int mes = Integer.parseInt(fechaSplit[1]) - 1; // Los meses en Java son 0-indexados
@@ -43,8 +40,6 @@ public class RegistroVentas {
 
             ventas.add(new Venta(producto, cliente, precio, fecha));
         }
-
-        // Ordenar las ventas por fecha, nombre del cliente y precio
         Collections.sort(ventas, new Comparator<Venta>() {
             public int compare(Venta v1, Venta v2) {
                 int fechaComparison = v1.fecha.compareTo(v2.fecha);
@@ -58,8 +53,6 @@ public class RegistroVentas {
                 return Double.compare(v1.precio, v2.precio);
             }
         });
-
-        // Mostrar los registros ordenados
         System.out.println("Registros de ventas ordenados:");
         for (Venta venta : ventas) {
             System.out.println(venta);

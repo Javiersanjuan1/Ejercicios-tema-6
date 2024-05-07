@@ -6,8 +6,6 @@ public class Main2 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         Map<Integer, Character> mapaNumerosLetras = new HashMap<>();
-
-        // Introducir conjuntos de pares número/letra
         System.out.println("Introduzca conjuntos de pares número/letra (Ingrese -1 para salir):");
         int numero;
         char letra;
@@ -20,8 +18,6 @@ public class Main2 {
                 mapaNumerosLetras.put(numero, letra);
             }
         } while (numero != -1);
-
-        // Recuperar una letra a partir de su número correspondiente
         System.out.print("\nIntroduzca un número para recuperar su letra correspondiente (-1 para salir): ");
         int numeroRecuperar;
         do {

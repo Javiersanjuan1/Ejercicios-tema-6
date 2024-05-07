@@ -8,10 +8,8 @@ public class ListarArchivos {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        // Indexar los archivos del directorio
         indexarArchivos("C:/ruta/del/directorio");
 
-        // Menú para buscar archivos por nombre o listar todos los archivos ordenados
         while (true) {
             System.out.println("Seleccione una opción:");
             System.out.println("1. Buscar archivo por nombre");
@@ -39,8 +37,6 @@ public class ListarArchivos {
             }
         }
     }
-
-    // Método para indexar los archivos del directorio y subdirectorios
     private static void indexarArchivos(String directorio) {
         try {
             Files.walk(Paths.get(directorio))
@@ -50,8 +46,6 @@ public class ListarArchivos {
             e.printStackTrace();
         }
     }
-
-    // Método para buscar la ruta de un archivo por su nombre
     private static void buscarArchivo(String nombreArchivo) {
         String ruta = archivos.get(nombreArchivo);
         if (ruta != null) {
@@ -60,8 +54,6 @@ public class ListarArchivos {
             System.out.println("El archivo \"" + nombreArchivo + "\" no fue encontrado.");
         }
     }
-
-    // Método para listar todos los archivos ordenados alfabéticamente
     private static void listarArchivosOrdenados() {
         List<String> nombresOrdenados = new ArrayList<>(archivos.keySet());
         Collections.sort(nombresOrdenados);
